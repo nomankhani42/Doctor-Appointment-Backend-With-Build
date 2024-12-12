@@ -139,7 +139,7 @@ export const updateUserProfile = async (req, res) => {
         let photoResponse = null;
         // Handle photo upload
         if (photo) {
-            photoResponse = await uploadOnCloudinary(photo.path); // Upload the photo
+            photoResponse = await uploadOnCloudinary(photo.buffer, photo.originalname);
         }
 
         // Prepare update data
