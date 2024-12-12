@@ -1,16 +1,6 @@
 import multer from 'multer';
 
+// Use memory storage instead of disk storage
+const storage = multer.memoryStorage();
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/tmp/my-uploads')
-    },
-    filename: function (req, file, cb) {
-      
-      cb(null, file.originalname)
-    }
-  })
-  
-  export const upload = multer({
-      storage 
-    });
+export const upload = multer({ storage });
