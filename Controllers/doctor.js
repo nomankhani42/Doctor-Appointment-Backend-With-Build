@@ -85,7 +85,7 @@ export const AddDoctor = async (req, res) => {
 
         if (photo) {
             const photoPath = photo.path;
-            cloudinaryResponse = await uploadOnCloudinary(photoPath);
+            cloudinaryResponse =await uploadOnCloudinary(photo.buffer, photo.originalname);
             if (!cloudinaryResponse) {
                 return res.status(500).json({
                     success: false,
