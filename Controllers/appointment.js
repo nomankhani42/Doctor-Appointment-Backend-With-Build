@@ -282,8 +282,8 @@ export const payAppointmentFeeOnline = async (req, res) => {
         },
       ],
       mode: 'payment', // One-time payment mode
-      success_url: `https://doctor-appointment-backend-with-build-six.vercel.app/profile/my-appointments?payment=true&Pid=${Pid}`,  // Replace with a valid client URL
-      cancel_url: `https://doctor-appointment-backend-with-build-six.vercel.app/profile/my-appointments?payment=false`, // Replace with a valid client URL
+      success_url: `https://doctor-appointment-backend-with-build.vercel.app/profile/my-appointments?payment=true&Pid=${Pid}`,  // Replace with a valid client URL
+      cancel_url: `https://doctor-appointment-backend-with-build.vercel.app/profile/my-appointments?payment=false`, // Replace with a valid client URL
     });
 
     // Step 4: Send the session ID to the frontend
