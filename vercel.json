@@ -1,3 +1,13 @@
+
+If your project doesn't have a specific root folder and you are working directly in the root directory (i.e., everything is in the same directory), you can simplify the vercel.json file accordingly.
+
+Here’s the updated configuration assuming:
+
+Your index.js (backend) is in the root folder.
+Your build output (Vite) is in the dist folder.
+Updated vercel.json:
+json
+Copy code
 {
   "version": 2,
   "builds": [
@@ -13,7 +23,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/$1"
+      "dest": "/dist/$1"
     },
     {
       "src": "/api/(.*)",
